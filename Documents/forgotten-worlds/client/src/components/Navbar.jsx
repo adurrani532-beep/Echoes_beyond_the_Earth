@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import { ScoutArt } from "./Scout.jsx";
+import Logo from "./Logo.jsx";
 
 const links = [
   ["/", "Home"],
@@ -16,7 +16,7 @@ export default function Navbar() {
   return (
     <header className="nav">
       <Link to="/" className="brand" onClick={() => setOpen(false)}>
-        <ScoutArt size={34} /> <span>Echoes <b>Beyond the Earth</b></span>
+        <Logo size={34} /> <span>Echoes <b>Beyond the Earth</b></span>
       </Link>
       <button className="burger" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Toggle menu">
         {open ? "✕" : "☰"}

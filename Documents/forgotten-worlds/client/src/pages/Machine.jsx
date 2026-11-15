@@ -18,13 +18,11 @@ export default function Machine() {
   const { id } = useParams();
   const machines = useMachines();
   const { visit, milestone } = useProgress();
-  const [view, setView] = useState("photo");
   const [photo, setPhoto] = useState(0);
   const idx = machines.findIndex((m) => m.id === id);
   const m = machines[idx];
   useEffect(() => {
     if (m) visit(m.id);
-    setView("photo");
     setPhoto(0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
@@ -56,35 +54,29 @@ export default function Machine() {
       <p className="lead">{m.hook}</p>
 
       <div className="media-box">
-        <div className="tabs small-tabs" role="tablist">
-          <button role="tab" aria-selected={view === "photo"} className={view === "photo" ? "on" : ""} onClick={() => setView("photo")}>📷 Photos</button>
-          <button role="tab" aria-selected={view === "3d"} className={view === "3d" ? "on" : ""} onClick={() => setView("3d")}>🧊 3D view</button>
-        </div>
-        {view === "photo" ? (
-          shots ? (
-            <figure>
-              <img className="big" src={shots[photo].src} alt={shots[photo].caption} />
-              <figcaption>{shots[photo].caption} <span className="muted">Credit: {shots[photo].credit}.</span></figcaption>
-              {shots.length > 1 && (
-                <div className="thumbs">
-                  {shots.map((s, n) => (
-                    <button key={s.src} onClick={() => setPhoto(n)} aria-label={`Show photo ${n + 1}`} className={n === photo ? "on" : ""}>
-                      <img src={s.src} alt="" loading="lazy" />
-                    </button>
-                  ))}
-                </div>
-              )}
-            </figure>
-          ) : (
-            <Media machine={m} className="big" />
-          )
-        ) : (
+        {m.model ? (
           <div>
-            <Suspense fallback={<p className="muted">Loading 3D viewer…</p>}>
-              <ModelViewer model={m.model} fallback={<Media machine={m} className="big" />} />
+            <Suspense fallback={<p className="muted">Loading 3D model…</p>}>
+              <ModelViewer model={m.model} fallback={<Media machine={m} className="big" />} height={460} />
             </Suspense>
             <p className="credit">{m.model.credit}</p>
           </div>
+        ) : shots ? (
+          <figure>
+            <img className="big" src={shots[photo].src} alt={shots[photo].caption} />
+            <figcaption>{shots[photo].caption} <span className="muted">Credit: {shots[photo].credit}.</span></figcaption>
+            {shots.length > 1 && (
+              <div className="thumbs">
+                {shots.map((x, n) => (
+                  <button key={x.src} onClick={() => setPhoto(n)} aria-label={`Show photo ${n + 1}`} className={n === photo ? "on" : ""}>
+                    <img src={x.src} alt="" loading="lazy" />
+                  </button>
+                ))}
+              </div>
+            )}
+          </figure>
+        ) : (
+          <Media machine={m} className="big" />
         )}
       </div>
 

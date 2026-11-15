@@ -1,14 +1,14 @@
 import Art from "./Art.jsx";
 
-// Shows the machine's photo, or an honest illustration if there is none yet.
+// Shows a 3D-model poster or a NASA photo, or an honest illustration if neither exists.
 export default function Media({ machine, className = "" }) {
-  if (machine.imageUrl) {
-    return <img className={className} src={machine.imageUrl} alt={`NASA image: ${machine.name}`} loading="lazy" />;
+  const src = machine.poster || machine.imageUrl;
+  if (src) {
+    return <img className={className} src={src} alt={machine.poster ? `3D model preview: ${machine.name}` : `NASA image: ${machine.name}`} loading="lazy" />;
   }
   return (
     <div className={`illus ${className}`}>
-      <Art kind={machine.model?.kind === "dawn" ? "dawn" : "mer"} label={`Illustration of ${machine.name}`} />
-      <span className="tag">Illustration - photo coming</span>
+      <Art kind="mer" label={`Illustration of ${machine.name}`} />
     </div>
   );
 }

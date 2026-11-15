@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 import Starfield from "./components/Starfield.jsx";
-import Scout from "./components/Scout.jsx";
 import Toast from "./components/Toast.jsx";
 import Home from "./pages/Home.jsx";
 import Explore from "./pages/Explore.jsx";
@@ -54,7 +53,6 @@ export default function App() {
         </AnimatePresence>
       </main>
       <Footer />
-      <Scout />
       <Toast />
     </>
   );

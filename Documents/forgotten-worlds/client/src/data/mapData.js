@@ -1,9 +1,11 @@
-// Marker positions for the illustrated maps. Longitudes are east-positive, latitudes north-positive.
-// `approx: true` means the position is shown approximately on a simplified illustration.
+// Marker positions for the 3D globes. Longitudes are east-positive, latitudes north-positive.
+// `approx: true` means the position is placed roughly on the globe.
 export const worlds = {
   Moon: {
     title: "The Moon",
-    note: "Illustrated, simplified map. Positions are approximate.",
+    model: "/models/moon.glb",
+    rotY: 0,
+    note: "3D globe from NASA 3D Resources. Markers sit at each landing site's real latitude and longitude on a sphere; the model's surface texture is not georeferenced, so treat positions as approximate.",
     markers: [
       { machine: "apollo-lm-descent-stage", label: "Tranquility Base (Apollo 11)", lat: 0.69, lon: 23.43, approx: false },
       { machine: "lunar-roving-vehicle", label: "Apollo 15 rover (Hadley-Apennine)", lat: 26.1, lon: 3.6, approx: true },
@@ -13,7 +15,9 @@ export const worlds = {
   },
   Mars: {
     title: "Mars",
-    note: "Illustrated, simplified map. Positions are approximate.",
+    model: "/models/mars.glb",
+    rotY: 0,
+    note: "3D globe from NASA 3D Resources. Markers sit at each landing site's real latitude and longitude on a sphere; the model's surface texture is not georeferenced, so treat positions as approximate.",
     markers: [
       { machine: "sojourner", label: "Sojourner / Pathfinder (Ares Vallis)", lat: 19.13, lon: -33.22, approx: false },
       { machine: "spirit", label: "Spirit (Gusev Crater)", lat: -14.57, lon: 175.47, approx: false },

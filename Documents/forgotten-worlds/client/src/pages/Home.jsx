@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useMachines } from "../lib/api.js";
 import MachineCard from "../components/MachineCard.jsx";
-const ModelViewer = lazy(() => import("../components/ModelViewer.jsx"));
+const HeroScene = lazy(() => import("../components/HeroScene.jsx"));
 import { useProgress, BADGES } from "../lib/progress.jsx";
 
 const worlds = [
@@ -22,6 +22,13 @@ export default function Home() {
   return (
     <>
       <section className="hero">
+        <div className="hero-bg" aria-hidden="true">
+          {lm && (
+            <Suspense fallback={null}>
+              <HeroScene model={lm.model} />
+            </Suspense>
+          )}
+        </div>
         <div className="hero-copy">
           <motion.p className="eyebrow" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>NASA Space Apps Challenge 2026</motion.p>
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>Echoes <span>Beyond the Earth</span></motion.h1>
@@ -32,14 +39,7 @@ export default function Home() {
             <Link to="/machine/opportunity" className="btn ghost">Discover their stories</Link>
           </div>
         </div>
-        <div className="hero-3d">
-          {lm && (
-            <Suspense fallback={<img className="hero-fallback" src="/images/as11-40-5927.jpg" alt="Apollo lunar module on the Moon" />}>
-              <ModelViewer model={lm.model} height={440} fallback={<img className="hero-fallback" src="/images/as11-40-5927.jpg" alt="Apollo lunar module on the Moon" />} />
-            </Suspense>
-          )}
-          <p className="credit">Apollo Lunar Module · 3D model from NASA 3D Resources</p>
-        </div>
+        <p className="credit hero-credit">Apollo Lunar Module · 3D model from NASA 3D Resources · drag to rotate</p>
       </section>
 
       <section className="page">
