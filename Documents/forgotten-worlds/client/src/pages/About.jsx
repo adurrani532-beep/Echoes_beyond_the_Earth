@@ -12,7 +12,7 @@ export default function About() {
       <p>This is an independent student project. It is not created, sponsored or endorsed by NASA. Story text is written for this project and simplified for a young audience. If you spot an error, please tell the team.</p>
 
       <h2>How the 3D views work</h2>
-      <p>The Apollo Lunar Module, Mars Exploration Rover (Spirit and Opportunity), Ingenuity, Moon and Mars use 3D models from NASA 3D Resources. Machines without an official model are shown with real NASA photographs.</p>
+      <p>The Apollo Lunar Module, Mars Exploration Rover (Spirit and Opportunity), Ingenuity, Moon and Mars use 3D models from NASA 3D Resources. The other 3D views are stylized illustrations made by our team and are labelled as such. Illustrations are never presented as real photographs.</p>
 
       <h2>Data sources</h2>
       <ul className="sources">

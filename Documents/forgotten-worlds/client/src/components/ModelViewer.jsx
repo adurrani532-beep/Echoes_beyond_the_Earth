@@ -1,4 +1,5 @@
 import { Component, Suspense, useLayoutEffect, useMemo, useRef } from "react";
+import Procedural from "./ProceduralModels.jsx";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF, ContactShadows, Html, Stars } from "@react-three/drei";
 import * as THREE from "three";
@@ -63,7 +64,13 @@ export default function ModelViewer({ model, fallback, height = 420, transparent
           <directionalLight position={[-4, 3, -3]} intensity={1.6} color="#7fb5ff" />
           <Stars radius={40} depth={20} count={800} factor={3} fade speed={reduce ? 0 : 1} />
           <Suspense fallback={<Loading />}>
-            <Glb src={model.src} size={model.size || 2.6} />
+            {model.type === "glb" ? (
+              <Glb src={model.src} size={model.size || 2.6} />
+            ) : (
+              <Fit>
+                <Procedural kind={model.kind} />
+              </Fit>
+            )}
           </Suspense>
           <ContactShadows position={[0, 0, 0]} opacity={0.5} scale={8} blur={2.4} far={3} />
           <OrbitControls autoRotate={!reduce} autoRotateSpeed={1.2} enablePan={false} minDistance={2.5} maxDistance={9} target={[0, 1.2, 0]} />

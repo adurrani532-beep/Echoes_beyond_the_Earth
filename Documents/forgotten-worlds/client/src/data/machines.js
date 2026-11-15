@@ -39,7 +39,13 @@ export const machines = [
       { title: "Smithsonian NASM: Apollo 11 Lunar Module", url: "https://airandspace.si.edu/amp-stories/lunar-module" },
       { title: "Tranquility Base (coordinates, LRO image)", url: "https://en.wikipedia.org/wiki/Tranquility_Base" }
     ],
-    poster: "/posters/apollo-lm-descent-stage.png",
+    imageUrl: "/images/as11-40-5927.jpg",
+    imageCredit: "NASA (Apollo 11, AS11-40-5927)",
+    gallery: [
+      { src: "/images/as11-40-5927.jpg", caption: "Apollo 11's lunar module Eagle on the Moon (AS11-40-5927).", credit: "NASA" },
+      { src: "/images/as14-66-9277.jpg", caption: "Apollo 14's lunar module Antares, another lander whose descent stage stayed on the Moon (AS14-66-9277).", credit: "NASA" },
+      { src: "/images/as14-66-9306.jpg", caption: "Apollo 14's lunar module Antares at its landing site (AS14-66-9306).", credit: "NASA" }
+    ],
     model: { type: "glb", src: "/models/apollo-lm.glb", credit: "NASA 3D Resources (Apollo Lunar Module)", size: 2.8 }
   },
   {
@@ -82,7 +88,8 @@ export const machines = [
       { src: "/images/as15-88-11901.jpg", caption: "A Lunar Roving Vehicle parked on the Moon (AS15-88-11901).", credit: "NASA" },
       { src: "/images/as16-107-17436.jpg", caption: "Lunar module and Lunar Roving Vehicle at an Apollo landing site (AS16-107-17436).", credit: "NASA" },
       { src: "/images/as17-134-20476.jpg", caption: "An astronaut at the Lunar Roving Vehicle during Apollo 17 (AS17-134-20476).", credit: "NASA" }
-    ]
+    ],
+    model: { type: "procedural", kind: "lrv", credit: "Stylized illustration by the Echoes Beyond the Earth team (not an official NASA model)" }
   },
   {
     id: "sojourner",
@@ -125,7 +132,8 @@ export const machines = [
       { src: "/images/pia00664.jpg", caption: "A view of the Pathfinder landing site with airbags (PIA00664).", credit: "NASA/JPL" },
       { src: "/images/pia00968.jpg", caption: "Sojourner among Martian rocks (PIA00968).", credit: "NASA/JPL" },
       { src: "/images/rover-family.jpg", caption: "Test models of three Mars rovers: a Mars Exploration Rover (left), Sojourner (small, centre) and Curiosity (right).", credit: "NASA/JPL (exact image ID to confirm)" }
-    ]
+    ],
+    model: { type: "procedural", kind: "sojourner", credit: "Stylized illustration by the Echoes Beyond the Earth team (not an official NASA model)" }
   },
   {
     id: "spirit",
@@ -161,7 +169,13 @@ export const machines = [
       { title: "Smithsonian: Mars Exploration Rovers", url: "https://sites.google.com/si.edu/ai-mars/mission-to-mars/rovers/mars-exploration-rover" },
       { title: "Spaceflight Now: Spirit's silence", url: "https://spaceflightnow.com/news/n1003/31spirit" }
     ],
-    poster: "/posters/spirit.png",
+    imageUrl: "/images/spirit-1.jpg",
+    imageCredit: "NASA/JPL (exact image ID to confirm)",
+    gallery: [
+      { src: "/images/spirit-1.jpg", caption: "A Mars Exploration Rover deck and the Martian horizon, seen by a rover camera.", credit: "NASA/JPL (exact image ID to confirm)" },
+      { src: "/images/spirit-2.jpg", caption: "Rover wheel tracks and bright soil on Mars, seen by a rover hazard camera.", credit: "NASA/JPL (exact image ID to confirm)" },
+      { src: "/images/spirit-3.jpg", caption: "A top-down view of a Mars Exploration Rover on the surface of Mars.", credit: "NASA/JPL (exact image ID to confirm)" }
+    ],
     model: { type: "glb", src: "/models/mer.glb", size: 3.2, credit: "NASA 3D Resources: Mars Exploration Rover (24883). Spirit and Opportunity were twin rovers" }
   },
   {
@@ -197,7 +211,13 @@ export const machines = [
       { title: "NASA Science archive: Mars Exploration Rover - Opportunity", url: "https://webarchive.library.unt.edu/web/20201219070427/https://science.nasa.gov/missions/mars-rovers" },
       { title: "Space.com: Opportunity rover", url: "https://www.space.com/18289-opportunity-rover.html" }
     ],
-    poster: "/posters/opportunity.png",
+    imageUrl: "/images/opportunity-selfie.jpg",
+    imageCredit: "NASA/JPL (exact image ID to confirm)",
+    gallery: [
+      { src: "/images/opportunity-selfie.jpg", caption: "A dust-covered Mars Exploration Rover in a self-portrait mosaic on Mars.", credit: "NASA/JPL (exact image ID to confirm)" },
+      { src: "/images/opportunity-arm.jpg", caption: "The robotic arm of a Mars Exploration Rover examining a rocky slope.", credit: "NASA/JPL (exact image ID to confirm)" },
+      { src: "/images/mer-testrover.jpg", caption: "Engineers with a Mars rover test vehicle on Earth.", credit: "NASA/JPL (exact image ID to confirm)" }
+    ],
     model: { type: "glb", src: "/models/mer.glb", size: 3.2, credit: "NASA 3D Resources: Mars Exploration Rover (24883). Spirit and Opportunity were twin rovers" }
   },
   {
@@ -235,7 +255,14 @@ export const machines = [
       { title: "NASASpaceflight: Ingenuity's mission ends after 72 flights", url: "https://nasaspaceflight.com/2024/01/ingenuity-final-flight" },
       { title: "Live Science: Ingenuity ends its mission", url: "https://www.livescience.com/space/mars/nasas-historic-ingenuity-helicopter-ends-its-3-year-mars-mission-suffering-rotor-damage-on-72nd-flight" }
     ],
-    poster: "/posters/ingenuity.png",
+    imageUrl: "/images/pia25881.jpg",
+    imageCredit: "NASA/JPL-Caltech (PIA25881)",
+    gallery: [
+      { src: "/images/pia25881.jpg", caption: "Ingenuity on the surface of Mars (PIA25881).", credit: "NASA/JPL-Caltech" },
+      { src: "/images/pia24598.jpg", caption: "Ingenuity's shadow, seen by its own downward-facing camera in flight (PIA24598).", credit: "NASA/JPL-Caltech" },
+      { src: "/images/pia23969.jpg", caption: "Ingenuity in a clean room on Earth before launch (PIA23969).", credit: "NASA/JPL-Caltech" },
+      { src: "/images/pia24466.jpg", caption: "Illustration of Ingenuity flying near Perseverance. This is an illustration, not a photo (PIA24466).", credit: "NASA/JPL-Caltech", illustration: true }
+    ],
     model: { type: "glb", src: "/models/ingenuity.glb", credit: "NASA 3D Resources (Ingenuity Mars Helicopter)", size: 4.4 }
   },
   {
@@ -273,7 +300,8 @@ export const machines = [
       { src: "/images/dawn-1.jpg", caption: "Dawn being prepared for launch on Earth.", credit: "NASA/JPL (exact image ID to confirm)" },
       { src: "/images/dawn-2.jpg", caption: "Dawn inside a test chamber on Earth.", credit: "NASA/JPL (exact image ID to confirm)" },
       { src: "/images/dawn-3.jpg", caption: "Technicians uncovering the Dawn spacecraft on Earth.", credit: "NASA/JPL (exact image ID to confirm)" }
-    ]
+    ],
+    model: { type: "procedural", kind: "dawn", credit: "Stylized illustration by the Echoes Beyond the Earth team (not an official NASA model)" }
   }
 ];
 
